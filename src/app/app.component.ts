@@ -27,7 +27,7 @@ export class AppComponent {
     if (stack.length < 8) {
       stack.push('New Item');
     } else {
-      alert('Maximum slot limit reached');
+      alert('Maximum stack limit reached');
     }
   }
   
@@ -47,6 +47,6 @@ export class AppComponent {
           event.currentIndex
         );
       }
-    } else alert('Maximum slot limit reached')
+    } else alert('Maximum stack limit reached')
   }
 }
