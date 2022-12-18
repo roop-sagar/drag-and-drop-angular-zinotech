@@ -2,16 +2,10 @@
   <div class="red stack">
     Red
     <button (click)="add(reds)">Add</button>
-    <div cdkDropList
-     #red="cdkDropList" 
-     [cdkDropListData]="reds"
-      class="list" 
-      (cdkDropListDropped)="drop($event,reds)"
-      
-      >
+    <div cdkDropList #red="cdkDropList" [cdkDropListData]="reds" class="list" (cdkDropListDropped)="drop($event,reds)">
       <div class="drag-box" *ngFor="let red of reds; index as i" cdkDrag>
         <div class="drag-content">
-          <input value={{red}} />
+          <input type="text" #inputVal value={{red}} (change)="valueChange(reds,i,inputVal.value)" />
           <div class="close" (click)="delete('red', i)">X</div>
         </div>
       </div>
@@ -20,13 +14,11 @@
   <div class="blue stack">
     Blue
     <button (click)="add(blues)">Add</button>
-    <div cdkDropList
-
-    #blue="cdkDropList" [cdkDropListData]="blues" class="list"
-     (cdkDropListDropped)="drop($event,blues)">
+    <div cdkDropList #blue="cdkDropList" [cdkDropListData]="blues" class="list"
+      (cdkDropListDropped)="drop($event,blues)">
       <div class="drag-box" *ngFor="let blue of blues; index as i" cdkDrag>
         <div class="drag-content">
-          <input value={{blue}} />
+          <input type="text" #inputVal value={{blue}} (change)="valueChange(blues,i,inputVal.value)" />
           <div class="close" (click)="delete('blue', i)">X</div>
         </div>
       </div>
@@ -36,10 +28,10 @@
     Green
     <button (click)="add(greens)">Add</button>
     <div cdkDropList #green="cdkDropList" [cdkDropListData]="greens" class="list"
-     (cdkDropListDropped)="drop($event,greens)">
+      (cdkDropListDropped)="drop($event,greens)">
       <div class="drag-box" *ngFor="let green of greens; index as i" cdkDrag>
         <div class="drag-content">
-          <input value={{green}} />
+          <input type="text" #inputVal value={{green}} (change)="valueChange(greens,i,inputVal.value)" />
           <div class="close" (click)="delete('green', i)">X</div>
         </div>
       </div>
@@ -48,11 +40,11 @@
   <div class="black stack">
     Black
     <button (click)="add(blacks)">Add</button>
-    <div cdkDropList #black="cdkDropList" [cdkDropListData]="blacks" class="list" 
-    (cdkDropListDropped)="drop($event,blacks)">
+    <div cdkDropList #black="cdkDropList" [cdkDropListData]="blacks" class="list"
+      (cdkDropListDropped)="drop($event,blacks)">
       <div class="drag-box" *ngFor="let black of blacks; index as i" cdkDrag>
         <div class="drag-content">
-          <input value={{black}} />
+          <input type="text" #inputVal value={{black}} (change)="valueChange(blacks,i,inputVal.value)" />
           <div class="close" (click)="delete('black', i)">X</div>
         </div>
       </div>

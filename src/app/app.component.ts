@@ -30,6 +30,9 @@ export class AppComponent {
       alert('Maximum stack limit reached');
     }
   }
+  valueChange(stack: any,i: any,value: any){
+    stack[i] = value;
+  }
   
   drop(event: CdkDragDrop<string[]>, data: any) {
     if (event.previousContainer === event.container) {
